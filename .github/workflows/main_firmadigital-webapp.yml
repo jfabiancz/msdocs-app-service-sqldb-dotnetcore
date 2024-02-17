@@ -27,12 +27,6 @@ jobs:
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
-      
-      - name: dotnet install ef
-        run: dotnet tool install -g dotnet-ef --version 7.0.14
-
-      - name: dotnet bundle migration
-        run: dotnet ef migrations bundle --runtime linux-x64 -p DotNetCoreSqlDb/DotNetCoreSqlDb.csproj -o ${{env.DOTNET_ROOT}}/myapp/migrate        
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
@@ -60,4 +54,4 @@ jobs:
           app-name: 'firmadigital-webapp'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3318B1C3E0AF4F1FB97F8D704C562A0E }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A6282CA11D7541C59EA5A723F5A51F62 }}
