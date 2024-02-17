@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 using ILoggerFactory factory = LoggerFactory.Create(builder => builder.AddConsole());
 ILogger logger = factory.CreateLogger("Program");
 logger.LogInformation("Hello World! Logging is {Description}.", "fun");
-logger.LogInformation("Valor  de AZURE_SQL_CONNECTIONSTRING = ",builder.Configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING"));
+logger.LogInformation("Valor    de AZURE_SQL_CONNECTIONSTRING = ",builder.Configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING"));
 
 // Add database context and cache
 builder.Services.AddDbContext<MyDatabaseContext>(options =>
